@@ -17,6 +17,7 @@ TagManager:
   - Dirt (Static)
   - Wood
   - Enemy
+  - PlayerObj
   layers:
   - Default
   - TransparentFX
@@ -34,9 +35,9 @@ TagManager:
   - Post Processing Scope
   - Invisible Wall
   - Projectile
-  - 
-  - 
-  - 
+  - WhatIsWall
+  - WhatIsGround
+  - WhatIsPlayer
   - 
   - 
   - 

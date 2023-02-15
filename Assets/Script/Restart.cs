@@ -3,14 +3,24 @@ using UnityEngine.SceneManagement;
 
 public class Restart : MonoBehaviour
 {
-    GameObject Enemy;
+    public GameObject GameOver;
+
+    private bool Finish = false;
 
     private void Update()
     {
-        Debug.Log(GameObject.FindGameObjectsWithTag("Enemy").Length);
         if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
         {
-            SceneManager.LoadScene(0);
+            Time.timeScale = 0f;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            Finish = true;
+            GameOver.SetActive(true);
+        }
+
+        if (Finish == true && Input.GetKeyDown("g"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }

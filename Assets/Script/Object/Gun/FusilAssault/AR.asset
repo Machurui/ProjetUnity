@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59efea0e034d34c4f900fa54dc432628, type: 3}
   m_Name: AR
   m_EditorClassIdentifier: 
-  name: 
+  name: AR
   damage: 22
   maxDistance: 200
-  currentAmmo: 30
+  currentAmmo: 12
   magSize: 31
   fireRate: 600
   reloadTime: 1.5

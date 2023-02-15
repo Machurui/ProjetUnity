@@ -438,6 +438,8 @@ GameObject:
   - component: {fileID: 1936875523094381619}
   - component: {fileID: 1995310900011872852}
   - component: {fileID: 1995310900011872855}
+  - component: {fileID: 755625420694572342}
+  - component: {fileID: 4469232124662176825}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -508,6 +510,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2175451468592f48bd4576123759ead, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!195 &755625420694572342
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1996561580388303333}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 11
+  m_Acceleration: 12
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 1
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &4469232124662176825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1996561580388303333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d31d30ad9221104d984ef82fde42e69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 755625420694572342}
+  player: {fileID: 0}
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 131072
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 262144
+  health: 120
+  walkPoint: {x: 0, y: 0, z: 0}
+  walkPointRange: 5
+  timeBetweenAttacks: 5
+  projectile: {fileID: 1280041506531093527, guid: 1546d714b2beb0a4a9fc3d593a5c9413,
+    type: 3}
+  sightRange: 20
+  attackRange: 12
+  playerInSightRange: 0
+  playerInAttackRange: 0
 --- !u!1 &1996657208537491079
 GameObject:
   m_ObjectHideFlags: 0
