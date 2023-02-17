@@ -9,18 +9,19 @@ public class Restart : MonoBehaviour
 
     private void Update()
     {
-        if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0 || GameObject.FindGameObjectsWithTag("Player").Length == 0)
+        if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0 || Finish == true)
         {
             Time.timeScale = 0f;
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-            Finish = true;
             GameOver.SetActive(true);
         }
 
         if (Finish == true && Input.GetKeyDown("g"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene(1);
         }
     }
+
+    public void SetTrue() { Finish = true; }
 }

@@ -5,12 +5,10 @@ using UnityEngine;
 
 public class OnDestroy : MonoBehaviour
 {
+    public Restart script;
     void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "Player")
-            foreach (var gameObj in GameObject.FindGameObjectsWithTag(other.gameObject.tag))
-            {
-                Destroy(gameObj);
-            }
+            script.GetComponent<Restart>().SetTrue();
     }
 }
