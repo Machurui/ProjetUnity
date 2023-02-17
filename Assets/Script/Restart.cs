@@ -9,7 +9,7 @@ public class Restart : MonoBehaviour
 
     private void Update()
     {
-        if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
+        if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0 || GameObject.FindGameObjectsWithTag("Player").Length == 0)
         {
             Time.timeScale = 0f;
             Cursor.lockState = CursorLockMode.None;

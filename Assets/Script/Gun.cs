@@ -8,10 +8,15 @@ public class Gun : MonoBehaviour
     [SerializeField] private Transform muzzle;
 
     float timeSinceLastShot;
-    public ParticleSystem shootParticule;
+
+    [Header("Audio")]
     public AudioSource reloadSound;
     public AudioSource shootSound;
     public AudioSource emptyMagazine;
+
+    [Header("Effet")]
+    public GameObject projectile;
+    public ParticleSystem shootParticule;
 
     private void Start()
     {
@@ -51,13 +56,12 @@ public class Gun : MonoBehaviour
                 shootParticule.Emit(1);
                 if (Physics.Raycast(muzzle.position, transform.forward, out RaycastHit hitInfo, gunData.maxDistance))
                 {
-                    CanBeDamageable damageable = hitInfo.transform.GetComponent<CanBeDamageable>();
-                    damageable?.TakeDamage(gunData.damage);
+                    if(hitInfo.transform.tag == "Enemy")
+                        Destroy(GameObject.Find(hitInfo.transform.name));
                 }
 
                 gunData.currentAmmo--;
                 timeSinceLastShot = 0;
-                OnGunShot();
                 shootSound.Play();
             }
         }
@@ -72,10 +76,5 @@ public class Gun : MonoBehaviour
         timeSinceLastShot += Time.deltaTime;
 
         Debug.DrawRay(muzzle.position, muzzle.forward);
-    }
-
-    private void OnGunShot()
-    {
-
     }
 }
