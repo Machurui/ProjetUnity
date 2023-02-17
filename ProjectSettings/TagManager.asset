@@ -18,6 +18,8 @@ TagManager:
   - Wood
   - Enemy
   - PlayerObj
+  - Bullet
+  - Environnement
   layers:
   - Default
   - TransparentFX

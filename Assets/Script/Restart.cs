@@ -15,13 +15,17 @@ public class Restart : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             GameOver.SetActive(true);
+            Finish = true;
         }
 
         if (Finish == true && Input.GetKeyDown("g"))
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(0);
         }
     }
 
-    public void SetTrue() { Finish = true; }
+    public void SetTrue()
+    {
+        Finish = true;
+    }
 }

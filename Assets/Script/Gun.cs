@@ -14,9 +14,6 @@ public class Gun : MonoBehaviour
     public AudioSource shootSound;
     public AudioSource emptyMagazine;
 
-    [Header("Effet")]
-    public ParticleSystem shootParticule;
-
     private void Start()
     {
         PlayerShoot.shootInput += Shoot;
@@ -52,10 +49,10 @@ public class Gun : MonoBehaviour
         {
             if (CanShoot())
             {
-                shootParticule.Emit(1);
+                Debug.Log(muzzle);
                 if (Physics.Raycast(muzzle.position, transform.forward, out RaycastHit hitInfo, gunData.maxDistance))
                 {
-                    
+
                     if (hitInfo.transform.tag == "Enemy")
                         Destroy(GameObject.Find(hitInfo.transform.name));
                 }
